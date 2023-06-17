@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>page title</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.CSS"/>
+        </head>
+        <body>
+            <header>
+                <h1 id="header">Header</h1>
+                </header>
+                <section>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Articles</a></li>
+                        </ul>
+                    </nav>
+                    <article>
+                        <h2>Artical Heading</h2>
+                        <div>
+                            <p>Paragraph</p>
+                            <a href="https://www.google.com/">More information...</a>
+                        </div>
+                           
+
+                                <video controls height="300" width="500"> 
+
+                                    <source src="https://joy1.videvo.net/videvo_files/video/free/2016-12/large_watermarked/Code_flythough_loop_01_Videvo_preview.mp4">
+                                    
+                                    <a href="https://joy1.videvo.net/videvo_files/video/free/2016-12/large_watermarked/Code_flythough_loop_01_Videvo_preview.mp4"></a>
+                                    
+                                    </video>
+                        </article>
+                        <aside id="aside">
+                            <h2>Related</h2>
+                            <ul>
+                                <li><a href="#">Article 1</a></li>
+                                <li><a href="#">Article 2</a></li>
+                            </ul>
+                        </aside>
+                </section>
+                <div>
+                    <div>
+                <footer>
+                    <p>@ copyright 2023 by Fathead LLC. all rights reserved</p>
+                </footer>
+            </div>
+            </div>
+        </body>
+        <script>
+            document.getElementById('header').innerHTML='Hello Javascript';
+            document.getElementById('aside').stlye.backgroundColor='green';
+        </script>
+        </html>
+    
