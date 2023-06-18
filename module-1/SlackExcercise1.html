@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slack Exercise Button Example</title>
+  <style>
+    #myButton1,
+    #myButton2 {
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    
+    var defaultColor;
+    
+    function changeTextColorToRed() {
+      var paragraph = document.getElementById("myParagraph");
+      paragraph.style.color = "red";
+    }
+      function changeTextColorToDefault() {
+        var paragraph = document.getElementById("myParagraph");
+      paragraph.style.color = "black";
+    }
+  </script>
+</head>
+<body>
+  <p id="myParagraph">This paragraph will change color at the click of a button.</p>
+  <button id="myButton1" onclick="changeTextColorToRed()">Click me to change the text color</button>
+  <button id="myButton2" onclick="changeTextColorToDefault()">Click me to change the color back</button>
+</body>
+</html>        
