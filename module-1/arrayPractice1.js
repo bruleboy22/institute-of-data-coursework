@@ -6,5 +6,3 @@ console.log(nbaSouthwest[1]); 'Houston Rockets'
 console.log(nbaSouthwest[2]); 'Memphis Grizzlies'
 console.log(nbaSouthwest[3]); 'New Orleans Pelicans'
 console.log(nbaSouthwest[4]); 'San Antonio Spurs'
-
-
