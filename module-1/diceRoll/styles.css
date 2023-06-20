@@ -1,0 +1,15 @@
+*{
+    padding: 10px 20px;
+    font-size: 50px;
+    background-color: blue;
+    color: white;
+    border-style: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #result {
+    font-size: 50px;
+    margin-top: 20px;
+  }
+  
