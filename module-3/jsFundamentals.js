@@ -244,3 +244,39 @@ cat1.breed = 'Domestic Shorthair';
 console.log(teamSports);
 console.log(dog1);
 console.log(cat1);
+
+//Excercise 10. The following constructor function creates a new Person object with the given name and
+//age values.
+//a) Create a new person using the constructor function and store it in a variable
+//b) Create a second person using different name and age values and store it in a separate
+//variable
+//c) Print out the properties of each person object to the console
+//d) Rewrite the constructor function as a class called PersonClass and use it to create a
+//third person using different name and age values. Print it to the console as well.
+//e) Add a canDrive method to both the constructor function and the class that returns true
+//if the person is old enough to drive.
+
+class PersonClass {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    this.human = true;
+  }
+
+  canDrive() {
+    return this.age >= 16;
+  }
+}
+
+let person1 = new PersonClass('Steven', 40);
+console.log(person1);
+
+let person2 = new PersonClass('Lacie', 26);
+console.log(person2);
+
+console.log(person1.name, person1.age, person1.human);
+console.log(person2.name, person2.age, person2.human);
+console.log(person1.canDrive());
+console.log(person2.canDrive());
+
+
