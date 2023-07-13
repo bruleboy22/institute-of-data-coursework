@@ -81,7 +81,19 @@ console.log(findMatchingAnimals('t'));
 //The function should remove all dashes, and uppercase the first letter of each word after a dash.
 //b) Create variants of the camelCase function that use different types of for loops, and
 //c) with and without the conditional operator.
+// Using a regular for loop and conditional operator
 
-console.log(camelCase('margin-left')) // marginLeft
-console.log(camelCase('background-image')) // backgroundImage
-console.log(camelCase('display')) // display
+function camelCase(cssProp) {
+  let words = cssProp.split('-');
+  let camelCaseProp = words[0];
+  
+  for (var i = 1; i < words.length; i++) {
+    camelCaseProp += words[i][0].toUpperCase() + words[i].slice(1);
+  }
+  
+  return camelCaseProp;
+}
+
+console.log(camelCase('margin-left')); // marginLeft
+console.log(camelCase('background-image')); // backgroundImage
+console.log(camelCase('display')); // display
