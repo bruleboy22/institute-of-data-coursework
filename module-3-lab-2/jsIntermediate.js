@@ -48,7 +48,30 @@ function truncate(str, max) {
 const animals = ['Tiger', 'Giraffe']
 console.log(animals)
 
+animals.push('Lion, Zebra');
+console.log(animals);
 
+animals.unshift('Monkey, Elphant');
+console.log(animals);
+
+animals.sort();
+console.log(animals);
+
+function replaceMiddleAnimal(newValue) {
+  const middleIndex = Math.floor (animals.length / 2);
+  animals[middleIndex] = newValue;
+}
+replaceMiddleAnimal('Hippo');
+console.log(animals);
+
+function findMatchingAnimals(beginsWith) {
+  const matchingAnimals = animals.filter(animal =>
+    animal.toLowerCase().startsWith(beginsWith.toLowerCase())
+  );
+  return matchingAnimals;
+}
+
+console.log(findMatchingAnimals('t'));
 
 
 
