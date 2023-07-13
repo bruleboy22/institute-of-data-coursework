@@ -87,8 +87,23 @@ function camelCase(cssProp) {
   let words = cssProp.split('-');
   let camelCaseProp = words[0];
   
-  for (var i = 1; i < words.length; i++) {
+  for (let i = 1; i < words.length; i++) {
     camelCaseProp += words[i][0].toUpperCase() + words[i].slice(1);
+  }
+  
+  return camelCaseProp;
+}
+
+console.log(camelCase('margin-left')); // marginLeft
+console.log(camelCase('background-image')); // backgroundImage
+console.log(camelCase('display')); // display
+
+function camelCase(cssProp) {
+  let words = cssProp.split('-');
+  let camelCaseProp = words[0];
+  
+  for (let word of words.slice(1)) {
+    camelCaseProp += word[0].toUpperCase() + word.slice(1);
   }
   
   return camelCaseProp;
