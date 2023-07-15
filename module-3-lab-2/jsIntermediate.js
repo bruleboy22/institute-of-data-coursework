@@ -112,3 +112,227 @@ function camelCase(cssProp) {
 console.log(camelCase('margin-left')); // marginLeft
 console.log(camelCase('background-image')); // backgroundImage
 console.log(camelCase('display')); // display
+
+
+// Excercise 5. Decimal number operations in JavaScript can lead to unexpected results, as in the
+//following:
+
+let twentyCents = 0.20
+let tenCents = 0.10
+let result = twentyCents + tenCents;
+console.log(`${twentyCents} + ${tenCents} = ${result.toFixed(2)}`);
+// 0.2 + 0.1 = 0.30000000000000004
+
+//We can sometimes avoid this using the toFixed function to force the number of decimal
+//places as below, but it’s not always useful:
+
+
+//a) Explain why this code returns the wrong answer
+
+let fixedTwenty = twentyCents.toFixed(2);
+let fixedTen = tenCents.toFixed(2);
+console.log(fixedTwenty + fixedTen) //why is this not working? 
+//This is not working because the additon sign here is concatenating.
+//It is attemting to return a string.
+
+//b) Create a function currencyAddition(float1, float2) which safely adds the two
+//decimal numbers float1 and float2 and returns the correct float result.
+
+function currencyAddition(float1, float2) {
+  return (parseFloat(float1) + parseFloat(float2)).toFixed(2);
+}
+console.log(result);
+// Output: 0.30
+
+//c) Create a function currencyOperation(float1, float2, operation) which
+//safely performs the given operation (either +, -, / or *) on the two numbers and returns
+//the correct float result. https://developer.mozilla.org/en-
+//US/docs/Web/JavaScript/Reference/Statements/switch may be useful.
+
+function currencyOperation(float1, float2, operation) {
+  switch (operation) {
+    case '+':
+      return (parseFloat(float1) + parseFloat(float2)).toFixed(2);
+    case '-':
+      return (parseFloat(float1) - parseFloat(float2)).toFixed(2);
+    case '/':
+      return (parseFloat(float1) / parseFloat(float2)).toFixed(2);
+    case '*':
+      return (parseFloat(float1) * parseFloat(float2)).toFixed(2);
+    default:
+      return 'Invalid operation';
+  }
+}
+console.log(result);
+// Output: 0.30
+
+//d) (Extension) Extend the above function to include a fourth argument numDecimals
+//which allows the operation to support different amounts of decimal places from 1 to 10.
+//HINT: Assume 2 decimal places for b) and c) and use a multiplication factor. Test with
+//different values as well as the below:
+
+console.log(0.3 == currencyAddition(0.1, 0.2)) // true
+console.log(0.3 == currencyOperation(0.1, 0.2, '+')) // true
+
+
+// Excercise 6. Create a function unique(duplicatesArray) which takes an array parameter that may
+//include duplicates. Your function should return an array containing only the unique values
+//from duplicatesArray.
+//Test with the following arrays and create another one of your own.
+
+function unique(duplicatesArray) {
+  const uniqueArray = [];
+  
+  for (let i = 0; i < duplicatesArray.length; i++) {
+    if (uniqueArray.indexOf(duplicatesArray[i]) === -1) {
+      uniqueArray.push(duplicatesArray[i]);
+    }
+  }
+  
+  return uniqueArray;
+}
+
+const colors = ['red', 'green', 'blue', 'yellow', 'orange', 'red', 'blue', 'yellow'];
+const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43];
+const students = ['Sam', 'Steven', 'Jeremy','Nick','Brandon'];
+
+console.log(unique(colors)); // [ 'red', 'green', 'blue', 'yellow', 'orange' ]
+console.log(unique(testScores)); // [ 55, 84, 97, 63, 32, 91, 43 ]
+console.log(unique(students)); // ['Sam', 'Steven', 'Jeremy', 'Nick', 'Brandon']
+
+//Excercise 7. Use the following array of book objects to practice the array functions for map, find and
+//filter. Test each of your answers to the below tasks.
+
+//a) Write a function getBookTitle(bookId) that uses the find function to return the
+//title of the book object with the matching id.
+//b) Write a function getOldBooks() that uses the filter function to return all book
+//objects written before 1950.
+//c) Write a function addGenre() that uses the map function to add a new genre property
+//to all of the above books, with the value ‘classic’.
+//d) (Extension) Write a function getTitles(authorInitial) that uses map and
+//filter together to return an array of book titles for books written by authors whose
+//names start with authorInitial.
+//e) (Extension) Write a function latestBook() that uses find and forEach to get the
+//book with the most recent publication date.
+
+function getBookTitle(bookId) {
+  const books = [
+    { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
+    { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960 },
+    { id: 3, title: '1984', author: 'George Orwell', year: 1949 },
+    { id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
+    { id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
+  ];
+  
+  const book = books.find(book => book.id === bookId);
+  return book ? book.title : 'Book not found';
+}
+
+function getOldBooks() {
+  const books = [
+    { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
+    { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960 },
+    { id: 3, title: '1984', author: 'George Orwell', year: 1949 },
+    { id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
+    { id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
+  ];
+  
+  const oldBooks = books.filter(book => book.year < 1950);
+  return oldBooks;
+}
+
+function addGenre() {
+  const books = [
+    { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
+    { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960 },
+    { id: 3, title: '1984', author: 'George Orwell', year: 1949 },
+    { id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
+    { id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
+  ];
+  
+  const booksWithGenre = books.map(book => ({ ...book, genre: 'classic' }));
+  return booksWithGenre;
+}
+
+function getTitles(authorInitial) {
+  const books = [
+    { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
+    { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960 },
+    { id: 3, title: '1984', author: 'George Orwell', year: 1949 },
+    { id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
+    { id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
+  ];
+  
+  const titles = books
+    .filter(book => book.author.startsWith(authorInitial))
+    .map(book => book.title);
+  return titles;
+}
+
+function latestBook() {
+  const books = [
+    { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
+    { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960 },
+    { id: 3, title: '1984', author: 'George Orwell', year: 1949 },
+    { id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
+    { id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
+  ];
+  
+  let latest = books[0];
+  books.forEach(book => {
+    if (book.year > latest.year) {
+      latest = book;
+    }
+  });
+  return latest;
+}
+
+console.log(getBookTitle(3)); // Output: 1984
+console.log(getOldBooks()); // Output: Array of book objects written before 1950
+console.log(addGenre()); // Output: Array of book objects with the added genre property
+console.log(getTitles('F')); // Output: Array of book titles written by authors whose names start with 'F'
+console.log(latestBook()); // Output: The latest book published
+
+//Excercise 8. The following code creates a new Map object for storing names beginning with A, B, or C
+//with their phone numbers.
+
+//a) Create a new phoneBookDEF Map to store names beginning with D, E or F
+//b) Initialise the contents of phoneBookDEF by passing in an array of keys/values
+//c) Update the phone number for Caroline
+//d) Write a function printPhoneBook(contacts) that prints the names and phone
+//numbers in the given Map
+//e) Combine the contents of the two individual Maps into a single phoneBook Map
+//f) Print out the full list of names in the combined phone book
+
+const phoneBookABC = new Map();
+phoneBookABC.set('Annabelle', '0412312343');
+phoneBookABC.set('Barry', '0433221117');
+phoneBookABC.set('Caroline', '0455221182');
+
+const phoneBookDEF = new Map([
+  ['Dustin', '0123456789'],
+  ['Edgar', '1234567890'],
+  ['Fran', '2345678901'],
+]);
+
+phoneBookABC.set('Caroline', '3456789012');
+
+function printPhoneBook(contacts) {
+  for (const [name, phoneNumber] of contacts) {
+    console.log(`${name}: ${phoneNumber}`);
+  }
+}
+
+printPhoneBook(phoneBookABC);
+
+const phoneBook = new Map(phoneBookABC);
+
+for (const [name, phoneNumber] of phoneBookDEF) {
+  phoneBook.set(name, phoneNumber);
+}
+
+for (const [name, phoneNumber] of phoneBook) {
+  console.log(`${name}: ${phoneNumber}`);
+}
+
+
