@@ -287,11 +287,11 @@ function latestBook() {
   return latest;
 }
 
-console.log(getBookTitle(3)); // Output: 1984
-console.log(getOldBooks()); // Output: Array of book objects written before 1950
-console.log(addGenre()); // Output: Array of book objects with the added genre property
-console.log(getTitles('F')); // Output: Array of book titles written by authors whose names start with 'F'
-console.log(latestBook()); // Output: The latest book published
+console.log(getBookTitle(3));
+console.log(getOldBooks());
+console.log(addGenre()); 
+console.log(getTitles('F'));
+console.log(latestBook());
 
 //Excercise 8. The following code creates a new Map object for storing names beginning with A, B, or C
 //with their phone numbers.
@@ -335,4 +335,81 @@ for (const [name, phoneNumber] of phoneBook) {
   console.log(`${name}: ${phoneNumber}`);
 }
 
+//Excercise 9. Given the below salaries object, perform the following tasks.
 
+//a) Write a function sumSalaries(salaries) that calculates and returns the total of all
+//salaries
+//b) Write a function topEarner(salaries) that calculates and returns the name of the
+//person earning the highest salary
+
+let salaries = {
+  "Timothy": 35000,
+  "David": 25000,
+  "Mary": 55000,
+  "Christina": 75000,
+  "James": 43000
+};
+
+function sumSalaries(salaries) {
+  const salaryValues = Object.values(salaries);
+  const totalSalary = salaryValues.reduce((sum, salary) => sum + salary, 0);
+  return totalSalary;
+}
+
+const total = sumSalaries(salaries);
+
+function topEarner(salaries) {
+  let maxSalary = 0;
+  let topEarnerName = "";
+
+  for (const [name, salary] of Object.entries(salaries)) {
+    if (salary > maxSalary) {
+      maxSalary = salary;
+      topEarnerName = name;
+    }
+  }
+
+  return topEarnerName;
+}
+
+const topEarnerName = topEarner(salaries);
+console.log("Total Salary:", total);
+console.log("Top Earner:", topEarnerName);
+
+// Excercise 10.The following code uses the Date object to print the current time and the number of hours
+//that have passed today so far. Extend the code to do the following:
+
+//a) Print the total number of minutes that have passed so far today
+//b) Print the total number of seconds that have passed so far today
+//c) Calculate and print your age as: 'I am x years, y months and z days old'
+//d) Write a function daysInBetween(date1, date2) which calculates and returns the
+//amount of days in between the two given dates.
+
+const today = new Date();
+console.log('Current time is ' + today.toLocaleTimeString());
+console.log(today.getHours() + ' hours have passed so far today');
+
+const totalMinutes = today.getHours() * 60 + today.getMinutes();
+console.log(totalMinutes + ' minutes have passed so far today');
+
+const totalSeconds = totalMinutes * 60 + today.getSeconds();
+console.log(totalSeconds + ' seconds have passed so far today');
+
+const birthDate = new Date('1983-01-08');
+const ageInMilliseconds = today - birthDate;
+const ageInYears = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25));
+const ageInMonths = Math.floor((ageInMilliseconds / (1000 * 60 * 60 * 24 * 30.44)) % 12);
+const ageInDays = Math.floor((ageInMilliseconds / (1000 * 60 * 60 * 24)) % 30.44);
+console.log('I am ' + ageInYears + ' years, ' + ageInMonths + ' months, and ' + ageInDays + ' days old');
+
+
+function daysInBetween(date1, date2) {
+  const timeDifference = Math.abs(date2 - date1);
+  const daysDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+  return daysDifference;
+}
+
+const startDate = new Date('2023-01-01');
+const endDate = new Date('2023-12-31');
+const daysBetween = daysInBetween(startDate, endDate);
+console.log('Number of days between the two dates:', daysBetween);
