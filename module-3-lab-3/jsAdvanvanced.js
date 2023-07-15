@@ -7,36 +7,38 @@
 //c) Modify makeCounter to take another argument incrementBy, which specifies how
 //much each call to counter() should increase the counter value by.
 
-function makeCounterA() {
-    let currentCount = 0;
-    return function() {
-      currentCount++;
-      console.log(currentCount)
-      return currentCount;
-};
-}
-let counter1 = makeCounterA();
-counter1(); 
-counter1();
-
-let counter2 = makeCounterA();
-counter2(); 
-counter2(); 
-
-function makeCounterB(startFrom) {
-    let currentCount = startFrom || 0;
+function makeCounterA(initialValue) {
+    let currentCount = initialValue || 0;
     return function() {
       currentCount++;
       console.log(currentCount);
       return currentCount;
     };
   }
-  let counter3 = makeCounterB(5);
+  
+  let counter1 = makeCounterA(0);
+  counter1(); 
+  counter1(); 
+  
+  let counter2 = makeCounterA(2);
+  counter2(); 
+  counter2(); 
+  
+
+function makeCounterB(startFrom) {
+    let currentCount = startFrom || 4;
+    return function() {
+      currentCount++;
+      console.log(currentCount);
+      return currentCount;
+    };
+  }
+  let counter3 = makeCounterB(4);
 counter3(); 
 counter3(); 
 
 function makeCounterC(startFrom, incrementBy) {
-    let currentCount = startFrom || 7;
+    let currentCount = startFrom || 0;
     incrementBy = incrementBy || 7;
     return function() {
       currentCount += incrementBy;
@@ -45,7 +47,7 @@ function makeCounterC(startFrom, incrementBy) {
     };
   }
   
-  let counter4 = makeCounterC(7, 7);
+  let counter4 = makeCounterC(0, 7);
   counter4(); 
   counter4(); 
   
