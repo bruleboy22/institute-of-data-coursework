@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="button-orange" onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="button-orange" onclick="appendToDisplay('*')">*</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="button-orange" onclick="appendToDisplay('+')">+</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button class="button-orange" onclick="clearDisplay()">C</button>
+            <button class="button-orange" onclick="appendToDisplay('-')">-</button>
+            <button class="button-orange" onclick="calculate()">=</button>
+            <button onclick="appendToDisplay('.')">.</button>
+        </div>
+    </div>
+    <script>
+        let display = document.getElementById("display");
+        let operator = "";
+        let num1 = "";
+        let num2 = "";
+
+        function appendToDisplay(value) {
+            display.value += value;
+        }
+        function clearDisplay() {
+            display.value = "";
+        }
+        function calculate() {
+            try {
+                const value = display.value
+                console.log({value})
+             
+                if (value.includes("+")){
+                    const [num1, num2] = value.split("+");
+
+                    console.log({num1, num2, operator: "+"});
+
+                fetch(`/calculator/add/?num1=${num1}&num2=${num2}`)
+                    .then(res => res.json())
+                    .then(json => {
+                        const result = json.result;
+                        display.value = result;
+                    })
+                    .catch(e => console.log(e))
+                }
+
+                if (value.includes("-")){
+                    const [num1, num2] = value.split("-");
+
+                    console.log({num1, num2, operator: "-"});
+
+                fetch(`/calculator/subtract/?num1=${num1}&num2=${num2}`)
+                    .then(res => res.json())
+                    .then(json => {
+                        const result = json.result;
+                        display.value = result;
+                    })
+                    .catch(e => console.log(e))
+                }
+
+                if (value.includes("/")){
+                    const [num1, num2] = value.split("/");
+
+                    console.log({num1, num2, operator: "/"});
+
+                fetch(`/calculator/divide/?num1=${num1}&num2=${num2}`)
+                    .then(res => res.json())
+                    .then(json => {
+                        const result = json.result;
+                        display.value = result;
+                    })
+                    .catch(e => console.log(e))
+                }
+               
+                if (value.includes("*")){
+                    const [num1, num2] = value.split("*");
+
+                    console.log({num1, num2, operator: "*"});
+
+                fetch(`/calculator/multiply/?num1=${num1}&num2=${num2}`)
+                    .then(res => res.json())
+                    .then(json => {
+                        const result = json.result;
+                        display.value = result;
+                    })
+                    .catch(e => console.log(e))
+                }
+
+                if (num1 && num2 && operator) {
+            const endpoint = (`/calculator/${operator}/?num1=${num1}&num2=${num2}`);
+            fetch(endpoint)
+                .then(res => res.json())
+                .then(json => {
+                    const result = json.result;
+                    display.value = result;
+                    num1 = result;
+                    num2 = "";
+                })
+                .catch(e => console.log(e));
+        }
+
+            } catch (error) {
+                console.log(error);
+                display.value = "Error";
+            }
+        }
+    </script>
+  </body>
+</html>
