@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Moment.js Examples</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data.min.js"></script>
+</head>
+<body>
+  <h2>Problem 1: Calculate the number of days between your birthdate and the current date</h2>
+  <div id="problem1"></div>
+
+  <h2>Problem 2: Display the number of years, months, and days between your birthdate and the current date</h2>
+  <div id="problem2"></div>
+
+  <h2>Problem 3: Given two dates, display the date closest to the current date</h2>
+  <div id="problem3"></div>
+
+  <h2>Problem 4: Given two dates, display whether the first date is before or after the second date</h2>
+  <div id="problem4"></div>
+
+  <h2>Problem 5: Display the current time in London</h2>
+  <div id="problem5"></div>
+
+  <script type="text/javascript">
+    function solveMomentProblems() {
+      const birthdate = moment('1983-01-08');
+      const currentDate = moment();
+      const daysBetween = currentDate.diff(birthdate, 'days');
+      document.getElementById('problem1').innerHTML = `Days between birthdate and current date: ${daysBetween} days`;
+
+      const ageDuration = moment.duration(currentDate.diff(birthdate));
+      const years = ageDuration.years();
+      const months = ageDuration.months();
+      const days = ageDuration.days();
+      document.getElementById('problem2').innerHTML = `Age: ${years} years, ${months} months, and ${days} days`;
+
+      const date1 = moment('1996-08-21');
+      const date2 = moment('2012-02-26');
+      const diff1 = Math.abs(currentDate.diff(date1, 'days'));
+      const diff2 = Math.abs(currentDate.diff(date2, 'days'));
+      const closestDate = diff1 < diff2 ? date1 : date2;
+      document.getElementById('problem3').innerHTML = `Closest date to the current date: ${closestDate.format('YYYY-MM-DD')}`;
+
+      const comparisonResult = date1.isBefore(date2) ? 'before' : 'after';
+      document.getElementById('problem4').innerHTML = `The first date is ${comparisonResult} the second date.`;
+
+      const londonTime = moment().tz("Europe/London").format('HH:mm:ss z');
+      document.getElementById('problem5').innerHTML = `Current time in London: ${londonTime}`;
+    }
+    
+    solveMomentProblems();
+  </script>
+</body>
+</html>
