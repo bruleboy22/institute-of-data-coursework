@@ -1,0 +1,408 @@
+
+.styles.css
+
+html {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  -webkit-tap-highlight-color: #0098FE66;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+head {
+  display: none;
+}
+  
+body {
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    background: unset;
+    font: 10px/13px 'Helvetica Neue','Arial Nova',Helvetica,Arial,sans-serif;
+  }
+
+
+
+  .sb_1 {
+  contain: layout size;
+  overflow-anchor: none;
+  box-sizing: border-box;
+  position: sticky;
+  z-index: 9999999;
+  top: 0;
+  min-width: 1000px;
+  height: 100px;
+  padding: 72px 0 0;
+  background: #fff;
+  -webkit-user-select: none;
+  user-select: none;
+  }
+
+.sb_2 {
+  position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: calc(50% - 120.545px);
+    width: 241.09px;
+    height: 56px;
+}
+
+.sb_3 {
+    opacity: 0;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: #fff;
+    color: #303030;
+    outline-offset: -2px;
+    font: 16px/1 'Unify Sans','Helvetica Neue','Arial Nova',Helvetica,Arial,sans-serif;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.sb_4 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    outline-offset: -2px;
+}
+
+.sb_5 {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px 30px;
+
+}
+.gnt_n_sm__ne {
+  left: 0;
+  right: auto;
+  margin: 0 0 0 17px;
+  padding: 0 0 0 calc(50% - 683px);
+}
+
+.gnt_n_sm {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  margin: 0 17px 0 0;
+  padding: 0 calc(50% - 683px) 0 0;
+}
+
+
+.gnt_n_sm__ne_a::before {
+  content: 'MARKETPLACE';
+}
+
+.gnt_n_sm__ne_a::after {
+  content: 'Search for & Place Classifieds'
+}
+
+.gnt_n_sm_a::before {
+  content: var('MARKETPLACE', 'SUBSCRIBE NOW');
+  margin: 0 0 3px;
+  color: #1665cf;
+  font: 700 16px/18px 'Unify Sans','Helvetica Neue','Arial Nova',Helvetica,Arial,sans-serif;
+}
+
+.gnt_n_sm_a {
+  content: 'Search for & Palce Classifieds';
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 200px;
+  height: 56px;
+  outline-offset: -2px;
+  color: black;
+  font: 700 12px/14px 'Helvetica Neue','Arial Nova',Helvetica,Arial,sans-serif;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+.header-nav {
+  contain: layout size;
+  display: flex;
+  justify-content: space-between;
+  height: 28px;
+  padding: 0 calc(50% - 599px);
+  background: #303030;
+}
+
+  .nav-menu{
+  overflow: hidden;
+  padding: 0 10px;
+  color: #fff;
+  font: 700 12px/28px 'Unify Sans','Helvetica Neue','Arial Nova',Helvetica,Arial,sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.marketplace-btn,
+.subscribe-btn {
+  background-color: white;
+  color: blue;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  font-size: medium;
+=======
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.gnt_n_lg_w {
+  max-width: 200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  text-align: center;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.marketplace-btn,
+.subscribe-btn {
+  background-color: white;
+  color: blue;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  font-size: medium;
+}
+
+.p {
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 80px;
+  font-size: small;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-nav {
+  border: 1px solid #000;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu li {
+  margin-right: 10px;
+}
+
+.menu li a {
+  display: block;
+  padding: 5px 10px;
+  color: #000;
+  text-decoration: none;
+  border: 1px solid #000;
+
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background-color: transparent;
+  border: 1px solid #000;
+  color: #000;
+  padding: 5px 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 200px;
+  padding: 10px;
+  top: 100%;
+
+  left;
+=======
+  left
+
+}
+.ad-space {
+  background-color: #eee;
+  padding: 20px;
+}
+
+.ad-space img {
+  content-visibility: auto;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.sb_7 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 980px;
+  margin: 0 auto;
+  padding: 20px 10px 0;
+  background: #fff;
+  position: relative;
+}
+
+.sb_7_1{
+  width: 660px;
+    margin: 0 auto 0 0;
+}
+
+.sb_7_2 {
+  padding: 20px;
+  display: flex;
+    flex-flow: column;
+    width: 660px;
+    margin-bottom: 10px;
+    outline-offset: 2px;
+    color: #303030;
+    font: 700 36px/38px 'Unify Sans','Helvetica Neue','Arial Nova',Helvetica,Arial,sans-serif;
+    text-decoration: none;
+  
+}
+.right-column {
+  contain: layout;
+    overflow-anchor: none;
+    width: 300px;
+} 
+.headlines, h3 {
+  contain: layout;
+    display: flex;
+    flex-flow: column;
+
+}
+
+.sb_7_3{
+  font-size: 24px;
+  margin-bottom: 10px;
+
+}
+
+.sb_7_4{    
+  
+  flex: 1;
+  margin: 24px 15px 0 0;
+  width: 210px;
+  text-decoration: none;
+  color: #303030;
+}
+
+.sb_7_4-1{
+  display: block;
+  width: 210px;
+  height: 118px;
+}
+
+.sb_7_4-2 {    
+  
+  margin: 5px 0 6px;
+  font: 700 14px/16px 'Helvetica Neue','Arial Nova',Helvetica,Arial,sans-serif;
+
+}
+
+.sb_7_5 {
+  margin-right: 0;
+  display: block;
+  width: 210px;
+  height: 118px;
+}
+
+
+.sb_7_6::before {    
+  content: attr(aria-label);
+  padding-right: 7px;
+  background: #fff;
+  color: #303030;
+  font: 700 24px/30px 'Unify Sans','Helvetica Neue','Arial Nova',Helvetica,Arial,sans-serif;
+
+}
+
+.sb_7_6::after {
+  content: '';
+    display: block;
+    height: 4px;
+    margin-top: -13px;
+    background: var(--gnt-ext-c,#626262);
+}
+
+.sb_7_7 {
+
+  margin: 20px 0;
+}
+
+.sb_7_8 {
+  contain: layout;
+  overflow-anchor: none;
+  width: 300px;
+}
+  .sb_7_8-1 {
+    contain: layout;
+    display: flex;
+    flex-flow: column;
+  }
+
+
+
+.container-left {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  padding:60px;
+  height: 800px;
+  width: 600px;
+}
+
+.content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 16px;
+}
+
+footer {
+  background-color: blue;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 200px;
+}

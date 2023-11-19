@@ -1,0 +1,53 @@
+*styles.css
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+  }
+  
+  .square {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: relative;
+    animation: slideAndChange 10s infinite, bounce 10s infinite;
+  }
+  
+  @keyframes slideAndChange {
+    0%, 100% {
+      top: 0;
+      background-color: blue;
+      border-radius: 0;
+    }
+    25% {
+      top: calc(100vh - 100px);
+      background-color: blue;
+      border-radius: 0;
+    }
+    50% {
+      top: calc(100vh - 100px);
+      background-color: red;
+      border-radius: 50%;
+    }
+    75% {
+      top: 0;
+      background-color: red;
+      border-radius: 50%;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      left: 0;
+      animation-timing-function: ease-in-out;
+    }
+    50% {
+      left: calc(100vw - 100px);
+      animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+  }
+  

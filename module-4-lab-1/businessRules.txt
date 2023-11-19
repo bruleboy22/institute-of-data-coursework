@@ -1,0 +1,30 @@
+B.dub Business Rules and Layout:
+
+B.dub is short for "Black and White" (B&W), which represents the overall concept of the entire site. 
+The platform is designed to start in black and white, but as the user engages more with the site, 
+it gradually becomes more colorful.
+
+Page 1: Simplistic Login/Sign Up Page
+- The page features a black background with white text.
+- The B.dub logo is prominently displayed at the center of the page.
+- The "Sign Up" button is located at the top left corner.
+- The "Log In" button is positioned at the top right corner.
+- The copyright information is placed at the footer of the page.
+
+Page 2: Black and White User Info and "Gray Zone" Home Page
+- This page maintains a black background with white text.
+- If a user chooses to sign up, they are directed to a user info page where they are asked about their interests 
+(e.g., sports, movies, music, etc.). The interest imagery is also presented in black and white, with white borders
+separating them from the black background.
+- If a user logs in, they are taken to their "Gray Zone," which serves as their home page. During the sign-up 
+process, the user would have already expressed their special interests. Consequently, these interests will now 
+start to appear in color on their "Gray Zone" home page.
+- The "Gray Zone" home page also provides suggestions for friends. The friend's imagery remains in 
+black and white until both parties agree to form a mutual friendship. Once mutual consent is reached, their 
+respective imagery starts to unfold in color. Until a mutual agreement is established, the relationship 
+is considered to be in the "Gray Zone."
+- The level of interaction with the site determines the colorfulness of the user's "Gray Zone." 
+As the user becomes more engaged and interactive, their "Gray Zone" becomes more colorful.
+
+Welcome to B.dub!
+
