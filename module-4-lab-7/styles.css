@@ -1,0 +1,43 @@
+*styles.css
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: black;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .signup-button,
+  .login-button {
+    position: absolute;
+    top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .signup-button {
+    left: 20px;
+  }
+  
+  .login-button {
+    right: 20px;
+  }
+  
+  .main-text {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 170px;
+  }
+  
